@@ -1,115 +1,278 @@
-# Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
-
-# Site
-title: 晨旭博客
-subtitle: ''
-description: ''
-keywords: ''
-author: '青春忆流年'
-language: zh-CN
-timezone: 'Asia/Shanghai'
 
 
-# URL
-## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://licx.world
-permalink: :title/
-permalink_defaults:
-pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+# Global 全局配置
+site_analytics: ''
+hoster: <a href="https://github.io" target="_blank">Github Pages</a>
+site_logo: https://ga.candinya.com/avatar/a7f9e15fef26e0a540edc977e21cb3eb
+avatarUrl: https://ga.candinya.com/avatar/a7f9e15fef26e0a540edc977e21cb3eb
+snow: false
+click_animate_js: 'candy'
+enable_dark: true
+highlight_theme: night-eighties # 代码高亮主题（light | night | night-eighties | night-blue | night-bright）
+check_update: true
+# canonical: true
+
+vendors:
+  packages:
+    disqusjs: 
+      version: 1.2.6
+    gitalk: 
+      version: 1.7.2
+    gitment: 
+      version: 0.0.3
+    twikoo: 
+      version: 1.5.11
+    valine: 
+      version: 1.4.18
+    "@waline/client": 
+      version: 2.14.1
+    bootstrap: 
+      version: 3.3.4
+    nprogress: 
+      version: 0.2.0
+    aplayer: 
+      version: 1.10.1
+    "@fancyapps/fancybox": 
+      version: 3.5.7
+    layui-src: 
+      version: 2.5.5
+    font-awesome: 
+      version: 4.7.0
+    jquery: 
+      version: 3.6.0
+    qrcode_js: 
+      version: 1.0.0
+    mermaid: 
+      version: 9.1.1
+    meting:
+      version: 2.0.1
+
+# 自定义样式
+customStyles:
+  images: # 图片相关设置
+    # banner: /images/banner.webp # 站点横幅
+    # background: /images/bg.webp # 站点背景
+
+# Index 首页配置
+index:
+  post_type: false
+  read_count: true
+  comment_count: true
+
+# Top Menu 顶部导航栏配置 （具体格式请参照文档）
+
+topMenu:
+- label: 首页
+  icon: home
+  url: /
+- label: 搜索
+  icon: search
+  url: search/
+- label: 时间轴
+  icon: file
+  url: /archives/
+- label: 分类
+  icon: tag
+  url: /categories/
+- label: 标签
+  icon: tag
+  url: /tags/
+- label: 关于
+  icon: tag
+  url: 关于/
+- label: 友联
+  icon: link
+  submenu:
+  - label: 作者博客
+    url: https://candinya.com
+  - label: 项目链接
+    url: https://github.com/Candinya/Kratos-Rebirth
 
 
-# Directory
-  #source_dir	资源文件夹，这个文件夹用来存放内容。	source
-  #public_dir	公共文件夹，这个文件夹用于存放生成的站点文件。	public
-  #tag_dir	标签文件夹	tags
-  #archive_dir	归档文件夹	archives
-  #category_dir	分类文件夹	categories
-  #code_dir	Include code 文件夹，source_dir 下的子目录	downloads/code
-  #i18n_dir	国际化（i18n）文件夹	:lang
-  #skip_render	跳过指定文件的渲染。匹配到的文件将会被不做改动地复制到 public 目录中。您可使用 glob 表达式来匹配路径。
 
-source_dir: source
-public_dir: public
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
-code_dir: downloads/code
-i18n_dir: :lang
-skip_render:
+# Footer 页脚配置
+group_link:
+contact: # 出于兼容性考虑，继续保留
+  weibo:
+  mail:
+  telegram:
+  twitter:
+  facebook:
+  linkedin:
+  fediverse:
+    instance:
+    username:
+  github:
+  rss:
+footerLinks: [] # 可以自定义
+#- icon: # 和 html 二选一，该选项表示使用来自 FontAwesome 4.7.0 图标库，内容为图标库中的唯一标识 （会被渲染为 <i class="fa fa-icon %>"></i>
+#  html: # 和 icon 二选一，该选项表示插入自定义的 HTML 作为标识，例如您可在此放置一串 svg
+#  link: # 按钮导向的目标链接
+#  currentPage: # 可选，默认为否，启用该选项表示在当前页内打开目标链接
 
-# Writing
-new_post_name: :title.md # File name of new posts
-default_layout: post
-titlecase: false # Transform title into titlecase
-external_link:
-  enable: true # Open external links in new tab
-  field: site # Apply to the whole site
-  exclude: ''
-filename_case: 0
-render_drafts: false
-post_asset_folder: false
-relative_link: false
-future: true
-syntax_highlighter: highlight.js
-highlight:
-  line_number: true
-  auto_detect: false
-  tab_replace: ''
-  wrap: true
-  hljs: false
-prismjs:
-  preprocess: true
-  line_number: true
-  tab_replace: ''
 
-# Home page setting
-# path: Root path for your blogs index page. (default = '')
-# per_page: Posts displayed per page. (0 = disable pagination)
-# order_by: Posts order. (Order by date descending by default)
-index_generator:
-  path: ''
-  per_page: 10
-  order_by: -date
+timenotice: 本站已运行
+icp: 苏ICP备20024678号-1
+psr:
+  
+# Post Page 文章页配置
+posts:
+  show_cc: false
+  donate: false
+  share: true
+  comments: 
+    provider: ''  #disqus/disqusjs/valine/twikoo/waline/gitalk/gitment/false)
+    enableBGImage: false
+  wordCount: 
+    enable: true
+    threshold: 1500
 
-# Category & Tag
-default_category: uncategorized
-category_map:
-tag_map:
+# Disqus [Disqus](https://disqus.com) 评论相关
+disqus:
+  shortname: 
 
-# Metadata elements
-## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
-meta_generator: true
+# DisqusJS [DisqusJS](https://disqusjs.skk.moe/) 评论相关
+disqusjs:
+  shortname: 
+  sitename: 
+  api: 
+  apikey: 
+  admin: 
+  adminlabel: 
 
-# Date / Time format
-## Hexo uses Moment.js to parse and display date
-## You can customize the date format as defined in
-## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
-time_format: HH:mm:ss
-## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'mtime'
+# Valine [Valine](https://valine.js.org) 评论相关
+valine:
+  app_id: 
+  app_key: 
+  visitor: true
+  enableQQ: false
 
-# Pagination
-## Set per_page to 0 to disable pagination
-per_page: 10
-pagination_dir: page
+# Twikoo [Twikoo](https://twikoo.js.org) 评论相关
+twikoo:
+  env_id: 
 
-# Include / Exclude file(s)
-## include:/exclude: options only apply to the 'source/' folder
-include:
-exclude:
-ignore:
+# Waline [Waline](https://waline.js.org) 评论相关
+## 不仅限于以下内容，您可以参照 Waline的 [前端配置文档](https://waline.js.org/reference/client.html) 设置您需要的配置项
+## el 和 path 会在页面自动生成，不必加入
+waline:
+  serverURL: #后端服务器地址，必填
+  comment: true
+  pageview: true
 
-# Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: Kratos-Rebirth
+# Gitalk [Gitalk](https://gitalk.github.io/) 评论相关
+## 不仅限于以下内容，您可以参照 [Gitalk 文档](https://github.com/gitalk/gitalk/blob/master/readme-cn.md#%E8%AE%BE%E7%BD%AE) 设置您需要的配置项
+## id 会在页面自动生成，不必加入
+gitalk:
+  clientID: 'GitHub Application Client ID'
+  clientSecret: 'GitHub Application Client Secret'
+  repo: 'Kratos-Rebirth-Demo'
+  owner: 'Candinya'
+  admin: 
+    - 'Candinya'
+  distractionFreeMode: false
 
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: ''
+#默认不计算hash 但是如果id过长(默认为url_for(page.path))会导致创建评论区失败 见[#139](https://github.com/Candinya/Kratos-Rebirth/issues/139)
+gitalk_id_hasher: false
+# gitalk_id_hasher: md5
+
+# Gitment [Gitment](https://github.com/imsun/gitment/) 评论相关
+## 不仅限于以下内容，您可以参照 [Gitment 文档](https://github.com/imsun/gitment#methods) 设置您需要的配置项
+## id 会在页面自动生成，不必加入
+gitment:
+  owner: 'Candinya'
+  repo: 'Kratos-Rebirth-Demo'
+  oauth:
+    client_id: 'Your client ID'
+    client_secret: 'Your client secret'
+
+# LiveRe [LiveRe](https://livere.com/) 评论相关
+livere:
+  id: city
+  uid:
+
+# APlayer 左下角音乐播放器
+aplayer:
+  enabled: false
+  playlist: 
+  meting:
+    server: netease
+    type: playlist
+    id: 3204190542
+  order: random
+
+# Widgets 侧边栏小挂件
+sidebar: right
+widgets:
+- about
+- splitter
+- toc
+- category
+- tagcloud
+- posts
+avatarUri: /images/avatar.webp
+mobile_toc: 
+  hide: false
+  hide_id: false
+
+# Fancybox 文章内图片单击放大
+fancybox: true
+
+# Search 搜索
+search:
+  enable: true
+  path: search.json
+  field: post # page | post | all. Default post
+  content: true # Include post | page content
+
+# JavaScript 相关配置
+## 由于Javascript被压缩后难以有效编辑与生成，因而为了简化操作，将相关的配置项在生成文件时以独立的json文件写出，调用时使用fetch API获取。
+jsconfig:
+  main:
+    cover:
+      randomAmount: 20 # 表示从1~20
+      baseUrl: null # 使用默认值（不单独配置），将跟随 vendors 中的相关设定选择是否使用 cdn
+      filenameTemplate: "thumb_{no}.webp" 
+    createTime: "2018/05/06 17:03:12"
+    donateBtn: "支持我~"
+    scanNotice: "扫一扫，好不好？"
+    qr_alipay: "/images/alipayqr.webp"
+    qr_wechat: "/images/wechatpayqr.webp"
+    siteLeaveEvent: false
+    leaveTitle: "{{{(>_<)}}}哦哟，崩溃啦~"
+    returnTitle: "(*´∇｀*)欸，又好啦~"
+    copyrightNotice: "该内容采用 CC BY-NC-SA 4.0 许可协议，著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"
+    expire_day: 30
+    topNavScrollToggle: true
+
+# Site verify 站点验证相关配置内容
+site_verify:
+  google: 
+  baidu: 
+  bing: 
+
+# Friends 友链相关内容
+friends:
+  href: "friends"
+  page:
+    title: "好伙伴们"
+    comments: false
+    description: "好伙伴们在哪里~"
+    updated: "2021-01-18"
+  list:
+  # - name: "猫猫①号"
+  #   bio: "喵~"
+  #   avatar: "../images/avatar.webp"
+  #   link: "https://candinya.com"
+  # - name: "猫猫②号"
+  #   bio: "喵喵~"
+  #   avatar: "../images/avatar.webp"
+  #   link: "https://candinya.com"
+  # - name: "猫猫⑨号"
+  #   bio: "咪啪~"
+  #   avatar: "../images/avatar.webp"
+  #   link: "https://candinya.com"
+  verify: true # 验证每个友链的可访问性，炸了会有提示
+
+# Misc 杂项
+misc:
+  showWordCountEstimateWavy: true # 在文章字数处显示表示大约字数的波浪号
